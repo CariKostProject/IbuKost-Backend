@@ -2,7 +2,7 @@ require('dotenv').config()
 const modelPayment = require('../models/payment')
 const axios = require('axios')
 const token =
-	'Basic eG5kX2RldmVsb3BtZW50X3l0MEJIYm0xM2V1UmEzSmRSenc3RVI5aVZ0aUxGZG85Mkw1MVBONUtxVmxlWG5zU3dvZVVKY2tjaW9lT1M6'
+	'Basic xnd_development_BoDwbkijzfY5vUKcZf0YbHBRQfHsty28eprAQjKFbpGvU268vpO8osqoJETrj'
 module.exports = {
 	getPayments: (req, res) => {
 		modelPayment
