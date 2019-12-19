@@ -45,20 +45,20 @@ module.exports = {
         message: "field cannot be empty"
       })
     }
-    if (req.files.length > 0) {
-      image = `${await uploadImage(req)}`
-    } else {
-      image = [
-        "https://res.cloudinary.com/zerefweismann/image/upload/v1568738285/papikos/hl69beci8dfujyjhuukd.jpg"
-      ]
-    }
+    // if (req.files.length > 0) {
+    //   image = `${await uploadImage(req)}`
+    // } else {
+    //   image = [
+    //     "https://res.cloudinary.com/zerefweismann/image/upload/v1568738285/papikos/hl69beci8dfujyjhuukd.jpg"
+    //   ]
+    // }
     const data = {
       name, //
       description, //
       price, //
       id_partner, //
       room_area, //
-      image, //
+      image:"https://res.cloudinary.com/zerefweismann/image/upload/v1568738285/papikos/hl69beci8dfujyjhuukd.jpg", //
       room_type_id, //
       status //
     }
