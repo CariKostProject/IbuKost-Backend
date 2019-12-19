@@ -70,31 +70,27 @@ module.exports = {
 	updateBooking: (req, res) => {
 		const id = req.params.id
 		const data = {
-			status: 'Paid'
+			
+			status: 'Paid',
+			
 		}
-
 		modelBooking
-			.getABooking(id)
+			.updateBooking(data,id)
 			.then(result => {
-				if (result.length !== 0) {
-					return modelBooking.updateBooking(data, id).then(result => {
-						res.send({
-							status: 200,
-							message: 'Booking data has been updated!',
-							id,
-							data
-						})
-					})
-				} else {
-					return res.status(400).send({
-						status: 400,
-						id,
-						message: 'Booking data does not exist!'
-					})
-				}
+				res.send({
+					status: 200,
+					message: 'Payment is successfully update',
+					booking: {
+						
+						status: 'Paid',
+					
+					},
+				
+				})
 			})
 			.catch(err => console.log(err))
 	},
+
 	deleteBooking: (req, res) => {
 		const id = req.params.id
 		modelBooking
