@@ -66,7 +66,7 @@ module.exports = {
     return new Promise((resolve, reject) => {
       const id_user = param.id_user
       const id_booking = param.id_booking
-      let basicquery = `select booking.id, booking.id_user,user.fullname, partner.fullname, partner.labelName from booking JOIN user on booking.id_user = user.id inner JOIN partner on booking.id_partner = partner.id where 1`
+      let basicquery = `select booking.id, booking.status, booking.id_user,user.fullname, partner.fullname, partner.labelName from booking JOIN user on booking.id_user = user.id inner JOIN partner on booking.id_partner = partner.id where 1`
       if (id_user != null) {
         basicquery += ` AND booking.id_user = '${id_user}'`
       }
