@@ -90,13 +90,13 @@ module.exports = {
       .then(async rs => {
         if (rs.length > 0) {
           if (req.files.length > 0) {
-            image = `${await uploadImage(req)}`
+            data.image = `${await uploadImage(req)}`
           }
           return modelRooms
             .editRoom(data, id)
             .then(rs => {
               data.id = id
-              modelRooms.getRoomById(data.id).then(newData => {
+              modelRooms.getRoomById(id).then(newData => {
                 res.json({
                   status: 200,
                   message: `room ${id} has been updated`,
