@@ -16,7 +16,7 @@ module.exports = {
   },
   getABooking: id => {
     return new Promise((resolve, reject) => {
-      conn.query(`${joinQuery} AND booking.id=?`, id, (err, result) => {
+      conn.query(`${joinQuery} AND booking.id_partner=?`, id, (err, result) => {
         if (!err) {
           resolve(result)
         } else {
