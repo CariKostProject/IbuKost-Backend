@@ -1,6 +1,6 @@
 const conn = require("../config/db")
 const joinQuery =
-  "SELECT booking.id, partner.id AS partner_id, user.id AS id_user, room.id AS room_id, booking.status, booking.startDate, booking.endDate, booking.bookingDate FROM booking, partner, user, room WHERE partner.id=booking.id_partner AND user.id=booking.id_user AND room.id=booking.room_id"
+  "SELECT booking.id, partner.id AS partner_id, user.id AS id_user, room.id AS room_id, booking.status, booking.startDate, booking.endDate, booking.book_Date FROM booking, partner, user, room WHERE partner.id=booking.id_partner AND user.id=booking.id_user AND room.id=booking.room_id"
 
 module.exports = {
   getBookings: () => {
@@ -85,7 +85,7 @@ module.exports = {
   getAHistory: id => {
     return new Promise((resolve, reject) => {
       conn.query(
-        `select booking.id,booking.id_user, user.fullname, partner.fullname, partner.labelName from booking JOIN user on booking.id_user = user.id inner JOIN partner on booking.id_partner = partner.id WHERE booking.id_user=?`,
+        `select booking.id,booking.status,booking.id_user, user.fullname, partner.fullname, partner.labelName from booking JOIN user on booking.id_user = user.id inner JOIN partner on booking.id_partner = partner.id WHERE booking.id_user=?`,
         id,
         (err, result) => {
           if (!err) {
