@@ -1,6 +1,6 @@
 const conn = require("../config/db")
 const joinQuery =
-  "SELECT booking.id, partner.id AS partner_id, user.id AS id_user, room.id AS room_id, booking.status, booking.startDate, booking.endDate, booking.book_Date FROM booking, partner, user, room WHERE partner.id=booking.id_partner AND user.id=booking.id_user AND room.id=booking.room_id"
+  "SELECT booking.id, partner.id AS partner_id, user.id AS id_user, user.fullname, room.name, room.id AS room_id, booking.status, booking.startDate, booking.endDate, booking.book_Date FROM booking, partner, user, room WHERE partner.id=booking.id_partner AND user.id=booking.id_user AND room.id=booking.room_id"
 
 module.exports = {
   getBookings: () => {
