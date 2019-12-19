@@ -268,7 +268,7 @@ module.exports = {
 			address: req.body.address,
 			latitude: '-7.758518',
 			longitude: '110.378147',
-			id_location: req.body.id_location,
+			id_location: "1001",
 			device_id: req.body.device_id,
 			gender: 'mix',
 			images:
