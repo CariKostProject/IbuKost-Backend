@@ -270,7 +270,7 @@ module.exports = {
 			longitude: '110.378147',
 			id_location: "1001",
 			device_id: req.body.device_id,
-			gender: 'mix',
+			gender: 'Putra',
 			images:
 				'https://d1nabgopwop1kh.cloudfront.net/hotel-asset/1615175216470708059_wh'
 		}
