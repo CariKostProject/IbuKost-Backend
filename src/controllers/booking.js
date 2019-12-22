@@ -70,9 +70,7 @@ module.exports = {
 	updateBooking: (req, res) => {
 		const id = req.params.id
 		const data = {
-			
-			status: 'Paid',
-			
+			status: 'Paid',	
 		}
 		modelBooking
 			.updateBooking(data,id)

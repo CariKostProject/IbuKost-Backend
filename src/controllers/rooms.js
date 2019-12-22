@@ -129,7 +129,6 @@ module.exports = {
     modelRooms
       .getRoomById(id)
       .then(rs => {
-        // if (rs.length > 0) {
           return modelRooms.deleteRoom(id).then(rs => {
             res.json({
               status: 200,
@@ -137,12 +136,6 @@ module.exports = {
               id
             })
           })
-        // } else {
-        //   return res.status(409).json({
-        //     status: 409,
-        //     message: `Id Invalid id ${id}`
-        //   })
-        // }
       })
       .catch(err => {
         res.status(500).json({

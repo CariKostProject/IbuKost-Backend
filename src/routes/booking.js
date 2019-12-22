@@ -13,6 +13,6 @@ Route.get("/", BookingController.getBookings)
   .delete("/:id", BookingController.deleteBooking)
   .get("/history", BookingController.getHistory)
   .get("/history/:id", BookingController.getAHistory)
-  // .patch("/payment/:id", multerUploads, BookingController.updatePayment)
+
 
 module.exports = Route
